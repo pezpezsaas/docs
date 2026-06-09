@@ -20,32 +20,31 @@ Ve a **Configuracion → Empresa** para completar y actualizar los datos basicos
 
 ### Prefijo de lote
 
-El prefijo es la primera parte del codigo de cada lote. Por defecto es `palet`, pero podes cambiarlo por cualquier texto.
+El prefijo es la primera parte del codigo de cada lote. Por defecto es `palet`, pero podes cambiarlo por cualquier texto breve.
 
 Ejemplo con prefijo `tf`: `tf-20260601-merluza-001`
+
+<Tip>
+Cambia el prefijo antes de crear el primer lote. Los lotes ya creados mantienen su codigo original.
+</Tip>
 
 ### Prefijo de caja
 
 Prefijo para el numero de serie de las cajas. Por defecto: `C`.
 
-Ejemplo: `C-00042`
-
 ### Prefijo de venta
 
-Prefijo para el numero de venta. Por defecto: `V`.
-
-Ejemplo: `V-0042`
+Prefijo para el numero de venta que aparece en los comprobantes. Por defecto: `V`.
 
 ## Modulos opcionales
 
 ### Modulo de Finanzas
 
-Controla si el modulo de finanzas (ventas, pagos, gastos, proveedores) esta visible y activo. Cuando esta desactivado:
+Controla si el modulo de finanzas (ventas, pagos, gastos, proveedores) esta activo para tu empresa. Cuando esta desactivado:
 
-- Las secciones de Finanzas desaparecen del menu
-- Los endpoints correspondientes quedan bloqueados
-- La operativa de produccion y logistica sigue funcionando normalmente
+- Las secciones de Finanzas desaparecen del menu de todos los usuarios
+- La operativa de produccion y logistica sigue funcionando con normalidad
 
 ### Visibilidad de clientes para el despachante
 
-Cuando esta **desactivado**, los usuarios con rol DISPATCHER ven las lineas de carga sin el nombre del cliente. Util para separar la informacion comercial de la operativa.
+Cuando esta **desactivado**, los usuarios con rol DISPATCHER ven las lineas de carga sin el nombre del cliente. Util para plantas donde se quiere separar la informacion comercial de la operativa de despacho.
