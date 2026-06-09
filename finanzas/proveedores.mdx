@@ -1,0 +1,55 @@
+---
+title: "Proveedores"
+description: "Como gestionar el maestro de proveedores y registrar pagos."
+icon: "building-2"
+---
+
+## Para que sirve el modulo de proveedores
+
+El modulo de **proveedores** centraliza la gestion de tus proveedores de materia prima (armadores, cooperativas, acopiadores). Cada proveedor puede vincularse a capturas del tipo `COMPRA_PROVEEDOR` y a gastos.
+
+## Tipos de proveedor
+
+| Tipo | Descripcion |
+|------|-------------|
+| `ARMADOR` | Propietario de barco pesquero |
+| `COOPERATIVA` | Cooperativa de pesca |
+| `ACOPIADOR` | Intermediario que acopila producto |
+| `OTRO` | Cualquier otro tipo de proveedor |
+
+## Crear un proveedor
+
+<Steps>
+  <Step title="Ve a Finanzas > Proveedores > Nuevo proveedor">
+  </Step>
+  <Step title="Completa los datos">
+    | Campo | Descripcion |
+    |-------|-------------|
+    | Nombre | Razon social (unico por empresa) |
+    | Tipo | ARMADOR, COOPERATIVA, ACOPIADOR u OTRO |
+    | CUIT | Identificacion fiscal (opcional) |
+    | Telefono y Email | Datos de contacto |
+    | Direccion | Domicilio comercial |
+    | Notas | Informacion adicional |
+  </Step>
+</Steps>
+
+## Pagos a proveedores
+
+Podes registrar pagos parciales o totales a cada proveedor. Los pagos pueden vincularse a una **captura especifica** para tener claro que porcion de la deuda corresponde a cada compra.
+
+### Registrar un pago al proveedor
+
+1. Abre el proveedor
+2. Ve a la pestana **Pagos**
+3. Presiona **Nuevo pago**
+4. Completa monto, metodo, fecha y la captura asociada (opcional)
+
+## Cuenta corriente con el proveedor
+
+El detalle de cada proveedor muestra:
+- Total comprado (suma de capturas vinculadas)
+- Total pagado
+- Saldo pendiente a pagar
+
+Esto te da una vision clara de tu deuda con cada proveedor de materia prima.
