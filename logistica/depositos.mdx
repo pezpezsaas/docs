@@ -1,0 +1,44 @@
+---
+title: "Depositos"
+description: "Como crear y gestionar ubicaciones de almacenamiento."
+icon: "warehouse"
+---
+
+## Que es un deposito
+
+Un **deposito** es una ubicacion de almacenamiento dentro de tu planta: una camara fria, un deposito seco, un muelle de carga, etc. Cada lote se asigna a un deposito, y los movimientos de stock quedan registrados entre depositos.
+
+## Crear un deposito
+
+<Steps>
+  <Step title="Ve a Logistica > Depositos > Nuevo deposito">
+  </Step>
+  <Step title="Ingresa el nombre">
+    El nombre debe ser unico dentro de tu empresa. Ejemplos: "Camara 1", "Muelle Norte", "Deposito Seco".
+  </Step>
+  <Step title="Layout (opcional)">
+    Podes definir un layout de posiciones para mapear visualmente donde esta cada palet dentro del deposito.
+  </Step>
+</Steps>
+
+## Limites por plan
+
+| Plan | Depositos maximos |
+|------|------------------|
+| FREE | 1 |
+| BASIC | 3 |
+| PRO | Ilimitados |
+
+<Warning>
+Al alcanzar el limite de depositos de tu plan, el boton "Nuevo deposito" queda deshabilitado. Actualiza tu plan para agregar mas.
+</Warning>
+
+## Control de acceso por usuario
+
+Podes restringir que **usuarios** tienen acceso a cada deposito. Esto es util para plantas con multiples sectores donde no todo el personal debe ver todos los depositos.
+
+La asignacion se hace desde **Equipo → Usuarios → editar usuario → Depositos con acceso**.
+
+## Movimientos de stock
+
+Cuando un lote se transfiere entre depositos, se registra automaticamente un **movimiento de stock** con fecha, tipo (INGRESO/EGRESO) y operario responsable. Esto genera un historial completo de donde estuvo cada palet.
