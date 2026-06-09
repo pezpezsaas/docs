@@ -17,16 +17,16 @@ No creas ventas manualmente — el sistema las genera con todos los datos de pre
 
 Cada venta tiene un numero autoincremental por empresa con el prefijo configurado. Ejemplo: `V-0042`.
 
-El prefijo se puede cambiar en **Configuracion → Empresa** (campo `prefijoVenta`).
+El prefijo se puede cambiar en **Configuracion → Empresa**.
 
 ## Estados de una venta
 
 | Estado | Descripcion |
 |--------|-------------|
-| `EMITIDA` | Venta generada con todos los precios completos |
-| `SIN_VALORIZAR` | Carga creada pero sin precios definidos en algunas lineas |
-| `PARCIAL_VALORIZADA` | Algunas lineas tienen precio y otras no |
-| `ANULADA` | Venta anulada (no elimina la carga ni el despacho) |
+| **EMITIDA** | Venta generada con todos los precios completos |
+| **SIN_VALORIZAR** | Carga creada pero sin precios definidos en las lineas |
+| **PARCIAL_VALORIZADA** | Algunas lineas tienen precio y otras no |
+| **ANULADA** | Venta anulada (no elimina la carga ni el despacho) |
 
 ## Lineas de venta
 
@@ -36,13 +36,17 @@ Cada venta tiene una o mas **lineas** con:
 - Cantidad de cajas y peso total
 - Precio unitario y unidad (CAJA o KG)
 - Subtotal
-- **COGS snapshot** — costo unitario al momento de la transaccion (para calcular margen)
-- Tier aplicado (CLIENTE, MINORISTA, MAYORISTA, MANUAL)
+- **COGS snapshot** — costo unitario al momento de la transaccion (se muestra si el lote tenia captura con costo registrado)
+- Tier de precio aplicado
+
+<Note>
+El margen de ganancia en cada linea se calcula automaticamente cuando el lote tiene **COGS** disponibles, es decir, cuando el lote fue vinculado a una captura con costo de materia prima. Si no hay COGS, el campo de margen aparece vacio.
+</Note>
 
 ## Filtros y busqueda
 
-Desde **Ventas** podes filtrar por fecha, cliente, estado y especie. Cada venta muestra el total, el saldo pendiente y el margen estimado.
+Desde **Ventas** podes filtrar por fecha, cliente, estado y especie. Cada venta muestra el total facturado y el saldo pendiente de cobro.
 
 ## Saldo pendiente
 
-Si el cliente no pago la totalidad de la venta, el saldo aparece destacado. Los pagos parciales se registran desde **Ventas → pagos** o desde el detalle del cliente.
+Si el cliente no pago la totalidad de la venta, el saldo aparece destacado. Los pagos se registran desde el detalle de la venta o desde el detalle del cliente en **Clientes**.
