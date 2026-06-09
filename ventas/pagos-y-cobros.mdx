@@ -1,0 +1,50 @@
+---
+title: "Pagos y cobros"
+description: "Como registrar pagos de clientes y gestionar la cuenta corriente."
+icon: "banknotes"
+---
+
+## Registrar un pago
+
+Podes registrar un pago de cliente de dos formas:
+
+### Desde el detalle de la venta
+
+1. Abre la venta correspondiente
+2. Presiona **Nuevo pago**
+3. Completa el monto, metodo y fecha
+
+### Desde el detalle del cliente
+
+1. Abre el cliente en **Clientes**
+2. Ve a la pestaña **Cuenta corriente**
+3. Presiona **Nuevo pago**
+4. Si queres aplicarlo a una venta especifica, seleccionala; si no, queda como pago a cuenta
+
+## Metodos de pago
+
+| Metodo | Descripcion |
+|--------|-------------|
+| `EFECTIVO` | Pago en efectivo |
+| `TRANSFERENCIA` | Transferencia bancaria (podes agregar numero de referencia) |
+| `CHEQUE` | Cheque (podes agregar numero) |
+| `MERCADO_PAGO` | Pago via Mercado Pago |
+| `TARJETA` | Tarjeta debito/credito |
+| `OTRO` | Cualquier otro metodo |
+
+## Cuenta corriente
+
+La **cuenta corriente** de un cliente es el saldo neto entre sus ventas y sus pagos:
+
+- Saldo **positivo** (a cobrar): el cliente debe dinero
+- Saldo **negativo** (a favor): el cliente tiene saldo a favor (adelanto o nota de credito)
+
+El saldo se ve en el detalle del cliente y en los filtros de la lista de clientes.
+
+## Concepto y referencia
+
+Al registrar un pago podes agregar:
+- **Concepto** libre (ej: "pago parcial", "saldo", "anticipo")
+- **Referencia** (numero de transferencia, cheque, etc.)
+
+Estos campos quedan en el historial de pagos para trazabilidad contable.
