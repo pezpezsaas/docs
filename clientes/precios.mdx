@@ -1,0 +1,48 @@
+---
+title: "Listas de precios"
+description: "Como configurar precios publicos y precios especificos por cliente."
+icon: "tag"
+---
+
+## Dos niveles de precios
+
+TrackFish maneja dos niveles de precios para cada especie:
+
+### Lista publica (precios de referencia)
+
+Precios generales de la empresa, accesibles desde **Configuracion → Precios publicos**:
+
+| Campo | Descripcion |
+|-------|-------------|
+| Precio minorista por caja | Precio de lista minorista, unidad CAJA |
+| Precio minorista por kg | Precio de lista minorista, unidad KG |
+| Precio mayorista por caja | Precio de lista mayorista, unidad CAJA |
+| Precio mayorista por kg | Precio de lista mayorista, unidad KG |
+
+### Precios por cliente (override)
+
+Precios especificos para un cliente, accesibles desde el **detalle del cliente → Precios**:
+
+- Se definen por especie
+- Tienen prioridad sobre la lista publica cuando ese cliente es seleccionado en un despacho
+
+## Tiers de precio
+
+Al crear una carga o entrega, el tier de precio se selecciona por linea:
+
+| Tier | Origen del precio |
+|------|-------------------|
+| `CLIENTE` | Precio especifico del cliente para esa especie |
+| `MINORISTA` | Lista publica minorista |
+| `MAYORISTA` | Lista publica mayorista |
+| `MANUAL` | Precio ingresado manualmente en el momento |
+
+Si el cliente tiene un **tier por defecto** configurado (ej: MAYORISTA), se pre-selecciona automaticamente al agregarlo a una carga.
+
+## Unidad de precio
+
+Los precios pueden ser **por CAJA** o **por KG**. Ambas unidades pueden coexistir para la misma especie y tier.
+
+## Snapshot en ventas
+
+Cuando se crea una venta (a partir de una carga o entrega), el precio queda **frozen** (snapshot) en la venta. Cambios posteriores en la lista de precios no afectan ventas anteriores.
