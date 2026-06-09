@@ -1,0 +1,36 @@
+---
+title: "Reservas de stock"
+description: "Como reservar producto para un cliente antes del despacho formal."
+icon: "calendar-check"
+---
+
+## Para que sirven las reservas
+
+Las **reservas de stock** te permiten "apartar" cajas de un lote para un cliente especifico antes de crear la carga. Son utiles cuando el cliente confirma el pedido pero el despacho se concreta dias despues.
+
+## Crear una reserva
+
+<Steps>
+  <Step title="Ve a Clientes > selecciona el cliente > Reservas > Nueva reserva">
+  </Step>
+  <Step title="Selecciona el lote">
+    Elige de que lote se reserva el stock.
+  </Step>
+  <Step title="Define la cantidad y la fecha de vencimiento de la reserva">
+    La fecha de vencimiento indica hasta cuando es valida la reserva (diferente a la fecha de vencimiento del producto).
+  </Step>
+  <Step title="Agrega una nota si es necesario">
+  </Step>
+</Steps>
+
+## Estados de una reserva
+
+| Estado | Descripcion |
+|--------|-------------|
+| `ACTIVA` | Stock reservado, pendiente de despacho |
+| `CONSUMIDA` | La carga correspondiente fue creada y despachada |
+| `CANCELADA` | Reserva cancelada manualmente |
+
+## Visibilidad del stock reservado
+
+En el detalle de un lote podes ver el **stock reservado** separado del stock disponible, para no comprometer el mismo producto a dos clientes.
