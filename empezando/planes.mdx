@@ -1,0 +1,52 @@
+---
+title: "Planes y facturacion"
+description: "Diferencias entre FREE, BASIC y PRO. Como funciona el costo por QR."
+icon: "star"
+---
+
+## Comparativa de planes
+
+| | **FREE** | **BASIC** | **PRO** |
+|---|---|---|---|
+| QRs por mes (tope) | 500 | 5.000 | Sin tope |
+| Depositos maximos | 1 | 3 | Ilimitados |
+| Usuarios activos | 2 | 5 | Ilimitados |
+| Modulo Finanzas | Incluido | Incluido | Incluido |
+| Trazabilidad QR | Incluida | Incluida | Incluida |
+| Despacho y firmas | Incluido | Incluido | Incluido |
+
+## Costo por QR generado
+
+Independientemente del plan, **cada QR generado cuesta USD 0.032**. Este monto se acumula durante el mes y aparece en la factura mensual junto a la cuota fija del plan.
+
+<Info>
+El plan FREE no tiene cuota mensual fija pero si cobra el costo por QR acumulado. Al alcanzar los 500 QRs del mes, la generacion queda bloqueada hasta el 1 del mes siguiente.
+</Info>
+
+## Tope de QRs
+
+- Al llegar al tope mensual, el boton "Generar QR" queda deshabilitado con un mensaje claro
+- El contador se reinicia al inicio de cada **periodo de facturacion**:
+  - Planes BASIC/PRO: el periodo arranca el dia del pago mensual
+  - Plan FREE: sigue el mes calendario (dia 1 de cada mes)
+
+<Warning>
+Una vez alcanzado el tope no se pueden generar nuevos QRs hasta renovar el periodo. Actualiza tu plan en cualquier momento desde **Configuracion → Suscripcion**.
+</Warning>
+
+## Prueba gratuita
+
+Al registrarte recibis **7 dias de prueba** con acceso completo. Al vencer el trial, el sistema pasa automaticamente a plan FREE.
+
+## Estados de suscripcion
+
+| Estado | Descripcion |
+|--------|-------------|
+| `TRIAL` | Periodo de prueba activo (7 dias desde el registro) |
+| `ACTIVE` | Suscripcion activa con pago al dia |
+| `GRACE_PERIOD` | Pago fallido — 7 dias de gracia antes de suspension |
+| `SUSPENDED` | Acceso de solo lectura, operaciones bloqueadas |
+
+## Pago
+
+El pago se procesa via **MercadoPago**. La suscripcion se activa de forma inmediata al completar el pago. Consulta [Gestion de suscripcion](/configuracion/suscripcion) para el proceso completo.
