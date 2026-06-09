@@ -1,0 +1,47 @@
+---
+title: "Notificaciones por email"
+description: "Como configurar los emails automaticos de resumen y alertas."
+icon: "bell"
+---
+
+## Tipos de notificacion
+
+TrackFish envia dos tipos de emails automaticos:
+
+### Resumen diario
+
+Un **resumen diario** con las metricas operativas principales:
+- Lotes abiertos y cerrados en el dia
+- Cajas creadas
+- Cargas despachadas
+- Alertas activas
+
+Se envia todos los dias a la hora configurada.
+
+### Alerta de lotes proximos a vencer
+
+Un email de alerta cuando hay lotes con **fecha de vencimiento proxima**. Te avisa con anticipacion para que puedas priorizar el despacho.
+
+## Configurar notificaciones
+
+<Steps>
+  <Step title="Ve a Configuracion > Empresa y buscas la seccion Notificaciones">
+  </Step>
+  <Step title="Activa o desactiva cada tipo">
+    - **Resumen diario**: activar / desactivar
+    - **Alertas de lotes vencidos**: activar / desactivar
+  </Step>
+  <Step title="Agrega los destinatarios">
+    En el campo **Emails de notificaciones** ingresa los emails separados por coma.
+    Ejemplo: `gerencia@empresa.com,admin@empresa.com`
+  </Step>
+</Steps>
+
+## Historial de notificaciones
+
+El historial de todos los emails enviados (exitosos y fallidos) esta disponible en **Configuracion → Historial de notificaciones**. Cada registro muestra:
+- Tipo de notificacion
+- Destinatarios
+- Asunto
+- Fecha y hora de envio
+- Resultado (exito o error)
