@@ -1,0 +1,48 @@
+---
+title: "Ventas"
+description: "Como se generan las ventas y como gestionarlas."
+icon: "receipt"
+---
+
+## Como se crean las ventas
+
+Las ventas en TrackFish se crean **automaticamente** a partir de:
+
+- Una **carga** completada (estado `RECIBIDO`)
+- Una **entrega directa** confirmada
+
+No creas ventas manualmente — el sistema las genera con todos los datos de precio, COGS y cliente al momento del despacho.
+
+## Numero de venta
+
+Cada venta tiene un numero autoincremental por empresa con el prefijo configurado. Ejemplo: `V-0042`.
+
+El prefijo se puede cambiar en **Configuracion → Empresa** (campo `prefijoVenta`).
+
+## Estados de una venta
+
+| Estado | Descripcion |
+|--------|-------------|
+| `EMITIDA` | Venta generada con todos los precios completos |
+| `SIN_VALORIZAR` | Carga creada pero sin precios definidos en algunas lineas |
+| `PARCIAL_VALORIZADA` | Algunas lineas tienen precio y otras no |
+| `ANULADA` | Venta anulada (no elimina la carga ni el despacho) |
+
+## Lineas de venta
+
+Cada venta tiene una o mas **lineas** con:
+
+- Tipo de pescado
+- Cantidad de cajas y peso total
+- Precio unitario y unidad (CAJA o KG)
+- Subtotal
+- **COGS snapshot** — costo unitario al momento de la transaccion (para calcular margen)
+- Tier aplicado (CLIENTE, MINORISTA, MAYORISTA, MANUAL)
+
+## Filtros y busqueda
+
+Desde **Ventas** podes filtrar por fecha, cliente, estado y especie. Cada venta muestra el total, el saldo pendiente y el margen estimado.
+
+## Saldo pendiente
+
+Si el cliente no pago la totalidad de la venta, el saldo aparece destacado. Los pagos parciales se registran desde **Ventas → pagos** o desde el detalle del cliente.
