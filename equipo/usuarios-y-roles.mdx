@@ -10,25 +10,25 @@ TrackFish tiene cuatro roles con distintos niveles de acceso:
 
 | Rol | Descripcion |
 |-----|-------------|
-| `ADMIN` | Acceso completo: produccion, logistica, finanzas, configuracion y usuarios |
-| `WORKER` | Operario de produccion: puede crear cajas, escanear QRs y ver lotes |
-| `DISPATCHER` | Despachante: puede crear y gestionar cargas y entregas |
-| `SUPERVISOR` | Vista panoramica de lectura: ve todo pero no puede crear ni modificar |
+| **ADMIN** | Acceso completo: produccion, logistica, finanzas, configuracion y gestion de usuarios |
+| **WORKER** | Operario de produccion: puede crear cajas, escanear QRs y ver lotes |
+| **DISPATCHER** | Despachante: puede crear y gestionar cargas y entregas |
+| **SUPERVISOR** | Vista de lectura: ve todo pero no puede crear ni modificar registros |
 
-## Permisos granulares
+## Permisos adicionales
 
-Ademas del rol, cada usuario tiene **permisos individuales** que se pueden activar o desactivar:
+Mas alla del rol, cada usuario tiene **permisos individuales** que el ADMIN puede activar o desactivar segun la necesidad:
 
-| Permiso | Descripcion |
+| Permiso | Que habilita |
 |---------|-------------|
-| `puedeVerProduccion` | Ver lotes, cajas y produccion |
-| `puedeVerDeposito` | Ver stock y movimientos en depositos |
-| `puedeVerCarga` | Ver cargas y despachos |
-| `puedeCrearCarga` | Crear y modificar cargas |
-| `puedeVerFinanzas` | Ver ventas, pagos, gastos y proveedores |
+| Ver produccion | Ver lotes, cajas y el modulo de produccion |
+| Ver depositos | Ver stock y movimientos en depositos |
+| Ver cargas | Ver el listado de cargas y despachos |
+| Crear cargas | Crear y modificar cargas (despachar producto) |
+| Ver finanzas | Ver ventas, pagos, gastos y proveedores |
 
 <Note>
-El rol ADMIN ignora estos permisos — siempre tiene acceso completo. Los permisos son relevantes para WORKER, DISPATCHER y SUPERVISOR.
+El rol **ADMIN** ignora estos permisos — siempre tiene acceso completo. Los permisos adicionales aplican a WORKER, DISPATCHER y SUPERVISOR.
 </Note>
 
 ## Crear un usuario
@@ -41,13 +41,13 @@ El rol ADMIN ignora estos permisos — siempre tiene acceso completo. Los permis
     El nombre de usuario debe ser unico dentro de tu empresa.
   </Step>
   <Step title="Selecciona el rol">
-    Elige entre ADMIN, WORKER, DISPATCHER o SUPERVISOR.
+    Elige entre ADMIN, WORKER, DISPATCHER o SUPERVISOR segun la funcion de la persona.
   </Step>
   <Step title="Configura los permisos adicionales">
-    Activa o desactiva los permisos granulares segun lo que necesita el usuario.
+    Activa o desactiva los permisos segun lo que necesita el usuario.
   </Step>
   <Step title="Asigna depositos con acceso">
-    Si aplica, selecciona a que depositos tiene acceso este usuario. Si no se asigna ninguno, el usuario ve todos.
+    Si aplica, selecciona a que depositos tiene acceso este usuario. Si no se asigna ninguno, el usuario ve todos los depositos.
   </Step>
 </Steps>
 
@@ -65,8 +65,8 @@ Al alcanzar el limite de usuarios del plan, no se pueden crear nuevas cuentas. D
 
 ## Desactivar un usuario
 
-Al desactivar un usuario, su cuenta queda bloqueada pero su historial (cajas creadas, cargas, etc.) se mantiene intacto. Esto es importante para auditoria.
+Al desactivar un usuario, su cuenta queda bloqueada pero su historial (cajas creadas, cargas, etc.) se mantiene intacto. Esto es importante para auditoria y trazabilidad.
 
-## Visibilidad del despachante
+## Visibilidad de clientes para el despachante
 
-En **Configuracion → Empresa** podes activar o desactivar si los usuarios con rol DISPATCHER ven el nombre del cliente en las lineas de carga. Util en plantas donde se quiere separar la informacion comercial de la operativa.
+En **Configuracion → Empresa** podes configurar si los usuarios con rol DISPATCHER ven el nombre del cliente en las lineas de carga. Util en plantas donde se quiere separar la informacion comercial de la operativa de despacho.
