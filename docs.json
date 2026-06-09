@@ -1,97 +1,57 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
-  "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
-  },
+  "name": "TrackFish",
+  "description": "Guia de uso de TrackFish — control de produccion, logistica y finanzas para frigorificos de pescado.",
+  "colors": { "primary": "#0D9488", "light": "#14B8A6", "dark": "#0F766E" },
   "favicon": "/favicon.ico",
-  "icons": {
-    "library": "lucide"
-  },
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
-  },
+  "icons": { "library": "lucide" },
+  "styling": { "eyebrows": "breadcrumbs" },
+  "contextual": { "options": ["copy", "view", "assistant"] },
   "navigation": {
     "global": {
       "anchors": [
-        {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "/"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
-        }
+        { "anchor": "TrackFish.io", "icon": "house", "href": "https://www.trackfish.io/" },
+        { "anchor": "Soporte", "icon": "life-buoy", "href": "mailto:soporte@trackfish.io" }
       ]
     },
-    "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
-        "expanded": true,
-        "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
-        ]
+        "group": "Primeros pasos", "icon": "rocket",
+        "pages": ["empezando/bienvenida","empezando/conceptos-clave","empezando/primer-acceso","empezando/planes"]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
-        "expanded": true,
-        "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
-        ]
+        "group": "Produccion", "icon": "package",
+        "pages": ["produccion/lotes","produccion/cajas-y-qr","produccion/capturas","produccion/especies"]
       },
       {
-        "group": "Integrations",
-        "icon": "plug",
-        "expanded": true,
-        "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
-        ]
+        "group": "Logistica", "icon": "truck",
+        "pages": ["logistica/depositos","logistica/cargas","logistica/entregas-directas","logistica/camiones"]
+      },
+      {
+        "group": "Clientes y Ventas", "icon": "users",
+        "pages": ["clientes/gestion-clientes","clientes/precios","clientes/reservas","ventas/ventas","ventas/pagos-y-cobros"]
+      },
+      {
+        "group": "Finanzas", "icon": "wallet",
+        "pages": ["finanzas/gastos","finanzas/proveedores"]
+      },
+      {
+        "group": "Equipo", "icon": "users-round",
+        "pages": ["equipo/usuarios-y-roles"]
+      },
+      {
+        "group": "Configuracion", "icon": "settings",
+        "pages": ["configuracion/empresa","configuracion/notificaciones","configuracion/suscripcion"]
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": { "light": "/logo/light.svg", "dark": "/logo/dark.svg" },
   "navbar": {
     "links": [],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "primary": { "type": "button", "label": "Ir a TrackFish", "href": "https://www.trackfish.io/" }
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
-    }
+    "socials": { "x": "https://x.com/trackfishio", "linkedin": "https://linkedin.com/company/trackfish" }
   }
 }
