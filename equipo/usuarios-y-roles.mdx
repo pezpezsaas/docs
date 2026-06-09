@@ -1,0 +1,72 @@
+---
+title: "Usuarios y roles"
+description: "Como crear usuarios, asignar roles y controlar permisos granulares."
+icon: "shield-check"
+---
+
+## Roles disponibles
+
+TrackFish tiene cuatro roles con distintos niveles de acceso:
+
+| Rol | Descripcion |
+|-----|-------------|
+| `ADMIN` | Acceso completo: produccion, logistica, finanzas, configuracion y usuarios |
+| `WORKER` | Operario de produccion: puede crear cajas, escanear QRs y ver lotes |
+| `DISPATCHER` | Despachante: puede crear y gestionar cargas y entregas |
+| `SUPERVISOR` | Vista panoramica de lectura: ve todo pero no puede crear ni modificar |
+
+## Permisos granulares
+
+Ademas del rol, cada usuario tiene **permisos individuales** que se pueden activar o desactivar:
+
+| Permiso | Descripcion |
+|---------|-------------|
+| `puedeVerProduccion` | Ver lotes, cajas y produccion |
+| `puedeVerDeposito` | Ver stock y movimientos en depositos |
+| `puedeVerCarga` | Ver cargas y despachos |
+| `puedeCrearCarga` | Crear y modificar cargas |
+| `puedeVerFinanzas` | Ver ventas, pagos, gastos y proveedores |
+
+<Note>
+El rol ADMIN ignora estos permisos — siempre tiene acceso completo. Los permisos son relevantes para WORKER, DISPATCHER y SUPERVISOR.
+</Note>
+
+## Crear un usuario
+
+<Steps>
+  <Step title="Ve a Equipo > Usuarios > Nuevo usuario">
+    Solo los ADMIN pueden crear usuarios.
+  </Step>
+  <Step title="Define el nombre de usuario y contrasena">
+    El nombre de usuario debe ser unico dentro de tu empresa.
+  </Step>
+  <Step title="Selecciona el rol">
+    Elige entre ADMIN, WORKER, DISPATCHER o SUPERVISOR.
+  </Step>
+  <Step title="Configura los permisos adicionales">
+    Activa o desactiva los permisos granulares segun lo que necesita el usuario.
+  </Step>
+  <Step title="Asigna depositos con acceso">
+    Si aplica, selecciona a que depositos tiene acceso este usuario. Si no se asigna ninguno, el usuario ve todos.
+  </Step>
+</Steps>
+
+## Limites por plan
+
+| Plan | Usuarios activos maximos |
+|------|--------------------------|
+| FREE | 2 |
+| BASIC | 5 |
+| PRO | Ilimitados |
+
+<Warning>
+Al alcanzar el limite de usuarios del plan, no se pueden crear nuevas cuentas. Desactiva usuarios que ya no usan el sistema o actualiza tu plan.
+</Warning>
+
+## Desactivar un usuario
+
+Al desactivar un usuario, su cuenta queda bloqueada pero su historial (cajas creadas, cargas, etc.) se mantiene intacto. Esto es importante para auditoria.
+
+## Visibilidad del despachante
+
+En **Configuracion → Empresa** podes activar o desactivar si los usuarios con rol DISPATCHER ven el nombre del cliente en las lineas de carga. Util en plantas donde se quiere separar la informacion comercial de la operativa.
