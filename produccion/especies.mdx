@@ -1,0 +1,49 @@
+---
+title: "Especies"
+description: "Como configurar las especies de pescado y su vida util."
+icon: "leaf"
+---
+
+## Para que sirven las especies
+
+Las **especies** definen los tipos de pescado que procesas. Son obligatorias antes de crear cualquier lote o caja porque el sistema necesita la **vida util** para calcular la fecha de vencimiento automaticamente.
+
+## Crear una especie
+
+<Steps>
+  <Step title="Ve a Configuracion > Especies > Nueva especie">
+  </Step>
+  <Step title="Completa los datos">
+    | Campo | Descripcion |
+    |-------|-------------|
+    | Nombre | Identificador de la especie (ej: "Merluza", "Salmon", "Lenguado") |
+    | Categoria | `PESCADO`, `MARISCO` o `CRUSTACEO` |
+    | Tipo de paquete | `CAJA` o `BOLSA` |
+    | Contabilizacion | `BOTONES` (escaneo), `MANUAL` o `DESACTIVADA` |
+    | Vida util (valor) | Numero de dias, meses o anos de duracion |
+    | Vida util (unidad) | `DIAS`, `MESES` o `ANIOS` |
+    | Peso minimo / maximo | Rango de peso esperado por caja (opcional, para validacion) |
+    | Tara kg | Peso del embalaje (se descuenta del peso neto) |
+  </Step>
+  <Step title="Activa la especie">
+    Por defecto la especie se crea activa. Podes desactivarla si deja de usarse sin perder el historial.
+  </Step>
+</Steps>
+
+## Calculo de fecha de vencimiento
+
+Al crear una caja, el sistema calcula automaticamente su `fechaVencimiento`:
+
+```
+fechaVencimiento = fechaCreacion + vidaUtil
+```
+
+Ejemplo: si la merluza tiene vida util de 30 dias y la caja se crea el 1 de junio, vence el 1 de julio.
+
+<Warning>
+Si una especie no tiene vida util configurada, el sistema no permite crear lotes ni cajas con esa especie. Define siempre la vida util antes de usarla en produccion.
+</Warning>
+
+## Alertas de vencimiento
+
+TrackFish puede enviarte alertas por email cuando hay lotes proximos a vencer. Configuralo en **Configuracion → Notificaciones**.
