@@ -12,7 +12,7 @@
     "global": {
       "anchors": [
         { "anchor": "TrackFish.io", "icon": "house", "href": "https://www.trackfish.io/" },
-        { "anchor": "Soporte", "icon": "life-buoy", "href": "mailto:soporte@trackfish.io" }
+        { "anchor": "Soporte", "icon": "life-buoy", "href": "https://www.trackfish.io/#contacto" }
       ]
     },
     "groups": [
@@ -50,8 +50,5 @@
   "navbar": {
     "links": [],
     "primary": { "type": "button", "label": "Ir a TrackFish", "href": "https://www.trackfish.io/" }
-  },
-  "footer": {
-    "socials": { "x": "https://x.com/trackfishio", "linkedin": "https://linkedin.com/company/trackfish" }
   }
 }
