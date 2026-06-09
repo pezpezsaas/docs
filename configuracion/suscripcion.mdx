@@ -1,0 +1,61 @@
+---
+title: "Gestion de suscripcion"
+description: "Como ver tu plan actual, realizar pagos y entender los estados de la suscripcion."
+icon: "credit-card"
+---
+
+## Ver tu plan actual
+
+Ve a **Configuracion → Suscripcion** para ver:
+- Plan activo (FREE, BASIC o PRO)
+- Fecha de proximo vencimiento
+- QRs generados en el periodo actual vs el tope
+- Estado de la suscripcion
+
+## Cambiar de plan
+
+<Steps>
+  <Step title="Ve a Configuracion > Suscripcion">
+  </Step>
+  <Step title="Selecciona el plan deseado">
+    Se muestran las caracteristicas y el precio de cada plan.
+  </Step>
+  <Step title="Completa el pago con MercadoPago">
+    El proceso de pago se abre en el navegador. Podes pagar con tarjeta de debito, credito o transferencia bancaria.
+  </Step>
+  <Step title="La suscripcion se activa inmediatamente">
+    Al confirmar el pago, el plan se actualiza al instante y recibis un comprobante por email.
+  </Step>
+</Steps>
+
+## Estados de la suscripcion
+
+| Estado | Que significa | Que podes hacer |
+|--------|---------------|-----------------|
+| `TRIAL` | Periodo de prueba activo (7 dias) | Todo habilitado |
+| `ACTIVE` | Pago al dia | Todo habilitado |
+| `GRACE_PERIOD` | Pago fallido — 7 dias para regularizar | Todo habilitado pero con aviso |
+| `SUSPENDED` | Periodo de gracia vencido | Solo lectura |
+
+<Warning>
+En estado `SUSPENDED` no podes crear lotes, cajas, cargas ni ninguna operacion de escritura. Solo podes ver los datos existentes. Para reactivar la cuenta, realiza el pago desde esta misma seccion.
+</Warning>
+
+## Facturacion
+
+La factura mensual incluye:
+- **Cuota fija** del plan (excepto FREE que no tiene)
+- **Costo por QR**: cantidad de QRs generados en el periodo x USD 0.032
+
+Recibis la factura por email junto al resumen de uso.
+
+## Preguntas frecuentes
+
+**¿Que pasa si cancelo?**
+Los datos se conservan durante 90 dias despues de la cancelacion. Podes reactivar la cuenta en ese periodo.
+
+**¿Puedo bajar de plan?**
+Si, podes pasar de PRO a BASIC o FREE en cualquier momento. El cambio aplica al proximo ciclo de facturacion.
+
+**¿El pago es automatico?**
+Si, el cobro es recurrente mensual via MercadoPago. Podes cancelarlo en cualquier momento.
