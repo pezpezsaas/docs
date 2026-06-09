@@ -1,0 +1,59 @@
+---
+title: "Conceptos clave"
+description: "Los terminos centrales que vas a encontrar en toda la aplicacion."
+icon: "book-open"
+---
+
+## Captura
+
+Una **captura** registra el **origen del pescado** que entra a tu planta.
+
+| Tipo | Descripcion |
+|------|-------------|
+| `CAPTURA_PROPIA` | Pesca propia — barco, zona FAO, arte de pesca, coordenadas |
+| `COMPRA_PROVEEDOR` | Compra a tercero — proveedor, kg comprados, precio, factura |
+
+Cada captura puede vincularse a uno o mas lotes, dando trazabilidad completa desde el barco hasta el cliente.
+
+## Lote (Palet)
+
+Un **lote** es un **palet de produccion**. Agrupa cajas del mismo tipo de pescado.
+
+- Se crea al iniciar la produccion y se **cierra** al terminar
+- El codigo se genera automaticamente: `{prefijo}-{YYYYMMDD}-{especie}-{nnn}`
+- Al cerrarse, el sistema calcula el **COGS** (costo unitario por caja y por kg)
+- Estados: `ABIERTO` → `CERRADO` → `EN_VIAJE` → `ENTREGADO`
+
+## Caja
+
+La **caja** es la unidad minima de producto. Cada caja tiene:
+
+- Especie (tipo de pescado)
+- Peso en kg y cantidad de unidades
+- Numero de serie unico (autoincremental por empresa)
+- **Codigo QR** individual para escaneo y trazabilidad
+- Fecha de vencimiento calculada automaticamente
+
+## Deposito
+
+Un **deposito** es una ubicacion de almacenamiento (camara fria, deposito seco, muelle, etc.). Cada lote y movimiento de stock esta asociado a un deposito.
+
+## Carga (Despacho)
+
+Una **carga** es un despacho hacia un cliente via camion. Incluye camion, lotes, cliente, URL publica de seguimiento y firmas digitales.
+
+## Entrega directa
+
+Una **entrega directa** es una salida de producto sin carga formal — util para ventas en mostrador o entregas pequenas. Genera automaticamente una venta.
+
+## Especie
+
+La **especie** define el tipo de pescado (merluza, salmon, lenguado, etc.) y su **vida util** para calcular la fecha de vencimiento de cada caja.
+
+<Warning>
+Antes de crear lotes o cajas, configura las especies con su vida util. Sin ese dato el sistema no puede calcular fechas de vencimiento.
+</Warning>
+
+## QR Token
+
+Cada caja y cada lote tiene un **token QR unico** (UUID). Al escanear el QR se identifica la pieza exacta y se muestra toda su historia.
