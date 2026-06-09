@@ -1,0 +1,42 @@
+---
+title: "Gestion de clientes"
+description: "Como crear y administrar tus clientes, categorias y cliente mostrador."
+icon: "users"
+---
+
+## Crear un cliente
+
+<Steps>
+  <Step title="Ve a Clientes > Nuevo cliente">
+  </Step>
+  <Step title="Completa los datos">
+    | Campo | Descripcion |
+    |-------|-------------|
+    | Nombre | Razon social o nombre del cliente (unico por empresa) |
+    | Categoria | MAYORISTA, MINORISTA, RESTAURANTE, EXPORTACION u OTRO |
+    | Tier por defecto | MINORISTA o MAYORISTA — se usa para pre-seleccionar el precio al despachar |
+    | Telefono | Contacto (opcional) |
+    | Email | Email de contacto (opcional) |
+    | Notas | Cualquier informacion adicional |
+  </Step>
+</Steps>
+
+## Categorias de cliente
+
+La categoria es informativa y ayuda a filtrar y organizar la cartera. No afecta directamente los precios, pero el **tier por defecto** si define que lista de precios se aplica automaticamente al despachar.
+
+## Cliente mostrador
+
+Cada empresa tiene un **cliente mostrador** creado automaticamente. Se usa para ventas en mostrador o walk-in donde el cliente no esta registrado. Este cliente:
+
+- Aparece como opcion rapida al crear entregas directas
+- No se muestra en los listados normales de clientes
+- Solo puede haber uno por empresa
+
+## Cuenta corriente
+
+Cada cliente tiene una **cuenta corriente** donde se acumulan las ventas y los pagos. Podes ver el saldo pendiente en el detalle del cliente. Ver [Pagos y cobros](/ventas/pagos-y-cobros).
+
+## Clientes inactivos
+
+Al marcar un cliente como inactivo deja de aparecer en los selectores de cargas y entregas, pero su historial se mantiene intacto.
