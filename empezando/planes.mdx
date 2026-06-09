@@ -1,6 +1,6 @@
 ---
 title: "Planes y facturacion"
-description: "Diferencias entre FREE, BASIC y PRO. Como funciona el costo por QR."
+description: "Diferencias entre FREE, BASIC y PRO. Como funciona la facturacion mensual."
 icon: "star"
 ---
 
@@ -15,17 +15,26 @@ icon: "star"
 | Trazabilidad QR | Incluida | Incluida | Incluida |
 | Despacho y firmas | Incluido | Incluido | Incluido |
 
-## Costo por QR generado
-
-Independientemente del plan, **cada QR generado cuesta USD 0.032**. Este monto se acumula durante el mes y aparece en la factura mensual junto a la cuota fija del plan.
-
 <Info>
-El plan FREE no tiene cuota mensual fija pero si cobra el costo por QR acumulado. Al alcanzar los 500 QRs del mes, la generacion queda bloqueada hasta el 1 del mes siguiente.
+Para ver los precios actualizados de cada plan, visita [trackfish.io](https://www.trackfish.io/).
 </Info>
+
+## Facturacion mensual
+
+La factura mensual de TrackFish tiene dos componentes:
+
+1. **Cuota fija del plan** — monto fijo mensual segun el plan contratado (FREE no tiene cuota fija)
+2. **Costo adicional por QR generado** — cada QR impreso acumula un costo unitario que se suma a la factura del mes
+
+<Note>
+El costo por QR aplica a todos los planes. El precio exacto lo encontras en [trackfish.io](https://www.trackfish.io/) o en tu panel de suscripcion dentro de la app.
+</Note>
 
 ## Tope de QRs
 
-- Al llegar al tope mensual, el boton "Generar QR" queda deshabilitado con un mensaje claro
+El tope mensual es el limite de QRs que podes generar en un periodo:
+
+- Al llegar al tope, el boton "Generar QR" queda deshabilitado con un mensaje claro
 - El contador se reinicia al inicio de cada **periodo de facturacion**:
   - Planes BASIC/PRO: el periodo arranca el dia del pago mensual
   - Plan FREE: sigue el mes calendario (dia 1 de cada mes)
@@ -36,7 +45,7 @@ Una vez alcanzado el tope no se pueden generar nuevos QRs hasta renovar el perio
 
 ## Prueba gratuita
 
-Al registrarte recibis **7 dias de prueba** con acceso completo. Al vencer el trial, el sistema pasa automaticamente a plan FREE.
+Al registrarte recibis **7 dias de prueba** con acceso completo a todas las funciones. Al vencer el trial, el sistema pasa automaticamente a plan FREE.
 
 ## Estados de suscripcion
 
@@ -44,8 +53,8 @@ Al registrarte recibis **7 dias de prueba** con acceso completo. Al vencer el tr
 |--------|-------------|
 | `TRIAL` | Periodo de prueba activo (7 dias desde el registro) |
 | `ACTIVE` | Suscripcion activa con pago al dia |
-| `GRACE_PERIOD` | Pago fallido — 7 dias de gracia antes de suspension |
-| `SUSPENDED` | Acceso de solo lectura, operaciones bloqueadas |
+| `GRACE_PERIOD` | Pago fallido — periodo de gracia para regularizar |
+| `SUSPENDED` | Periodo de gracia vencido — solo lectura |
 
 ## Pago
 
