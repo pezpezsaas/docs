@@ -1,0 +1,66 @@
+---
+title: "Cargas (Despachos)"
+description: "Como crear despachos, asignar camiones y gestionar la recepcion con firma digital."
+icon: "truck"
+---
+
+## Que es una carga
+
+Una **carga** (despacho) es la salida formal de producto desde tu planta hacia un cliente o destino. Incluye camion, lotes seleccionados, cliente, y genera un comprobante con firma digital.
+
+## Crear una carga
+
+<Steps>
+  <Step title="Ve a Logistica > Cargas > Nueva carga">
+  </Step>
+  <Step title="Selecciona el camion">
+    Elige el camion que va a transportar el producto. Si no hay camiones cargados, ve primero a [Camiones](/logistica/camiones).
+  </Step>
+  <Step title="Agrega lineas de producto">
+    Cada linea de la carga corresponde a un lote. Por cada linea defines:
+    - Lote a despachar
+    - Cliente destinatario (puede variar por linea en cargas multi-cliente)
+    - Cantidad de cajas
+    - Precio unitario y unidad (por caja o por kg)
+    - Tier de precio aplicado: CLIENTE, MINORISTA, MAYORISTA, MANUAL
+  </Step>
+  <Step title="Define el deposito destino (opcional)">
+    Si el producto va a otro deposito propio (transferencia interna), seleccionalo.
+  </Step>
+  <Step title="Confirma">
+    La carga queda en estado `PENDIENTE`. El lote pasa a `EN_VIAJE`.
+  </Step>
+</Steps>
+
+## Estados de una carga
+
+| Estado | Descripcion |
+|--------|-------------|
+| `PENDIENTE` | Carga creada, aun no salio |
+| `TRANSITO` | Camion en camino |
+| `RECIBIDO` | Recepcion confirmada |
+
+## URL publica de seguimiento
+
+Cada carga genera automaticamente una **URL publica** (sin necesidad de login) que podes compartir con el cliente para que siga el estado del despacho en tiempo real.
+
+## Firma digital
+
+Al momento de la entrega, la app captura dos firmas:
+- **Firma del transportista** — confirma que entrego el producto
+- **Firma del receptor** — confirma que recibio el producto junto con el nombre y DNI
+
+Ambas firmas quedan almacenadas como imagen en el historial de la carga.
+
+## Recepcion y diferencias
+
+Al recibir la carga, el receptor puede indicar:
+- Cantidad recibida por linea (puede diferir de lo despachado)
+- Temperatura de arribo
+- Novedades (notas de recepcion)
+
+Si hay diferencias entre lo despachado y lo recibido, quedan registradas en el historial.
+
+## Despacho multi-lote
+
+Una carga puede incluir multiples lotes y multiples clientes simultaneamente. Cada linea de la carga es independiente en cuanto a lote, cliente y precio.
