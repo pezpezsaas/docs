@@ -11,6 +11,7 @@ Ve a **Configuracion → Suscripcion** para ver:
 - Fecha de proximo vencimiento
 - QRs generados en el periodo actual vs el tope
 - Estado de la suscripcion
+- Detalle de la factura del mes en curso
 
 ## Cambiar de plan
 
@@ -18,7 +19,7 @@ Ve a **Configuracion → Suscripcion** para ver:
   <Step title="Ve a Configuracion > Suscripcion">
   </Step>
   <Step title="Selecciona el plan deseado">
-    Se muestran las caracteristicas y el precio de cada plan.
+    Se muestran las caracteristicas y el precio de cada plan. Para consultar precios actualizados visita [trackfish.io](https://www.trackfish.io/).
   </Step>
   <Step title="Completa el pago con MercadoPago">
     El proceso de pago se abre en el navegador. Podes pagar con tarjeta de debito, credito o transferencia bancaria.
@@ -32,30 +33,31 @@ Ve a **Configuracion → Suscripcion** para ver:
 
 | Estado | Que significa | Que podes hacer |
 |--------|---------------|-----------------|
-| `TRIAL` | Periodo de prueba activo (7 dias) | Todo habilitado |
-| `ACTIVE` | Pago al dia | Todo habilitado |
-| `GRACE_PERIOD` | Pago fallido — 7 dias para regularizar | Todo habilitado pero con aviso |
-| `SUSPENDED` | Periodo de gracia vencido | Solo lectura |
+| **TRIAL** | Periodo de prueba activo (7 dias) | Todo habilitado |
+| **ACTIVE** | Pago al dia | Todo habilitado |
+| **GRACE_PERIOD** | Pago fallido — periodo de gracia para regularizar | Todo habilitado, con aviso en pantalla |
+| **SUSPENDED** | Periodo de gracia vencido | Solo lectura — no se pueden crear registros nuevos |
+| **DATA_RETENTION** | Cuenta cancelada — datos en periodo de conservacion | Solo lectura limitada |
 
 <Warning>
-En estado `SUSPENDED` no podes crear lotes, cajas, cargas ni ninguna operacion de escritura. Solo podes ver los datos existentes. Para reactivar la cuenta, realiza el pago desde esta misma seccion.
+En estado **SUSPENDED** no podes crear lotes, cajas, cargas ni ninguna operacion de escritura. Para reactivar la cuenta, realiza el pago desde esta misma seccion.
 </Warning>
 
 ## Facturacion
 
-La factura mensual incluye:
-- **Cuota fija** del plan (excepto FREE que no tiene)
-- **Costo por QR**: cantidad de QRs generados en el periodo x USD 0.032
+La factura mensual incluye dos componentes:
+- **Cuota fija** del plan (FREE no tiene cuota fija)
+- **Costo adicional por QR** segun los QRs generados en el periodo
 
-Recibis la factura por email junto al resumen de uso.
+El detalle del costo por QR y los precios de cada plan se encuentran en [trackfish.io](https://www.trackfish.io/) o dentro del panel de suscripcion.
 
 ## Preguntas frecuentes
 
-**¿Que pasa si cancelo?**
-Los datos se conservan durante 90 dias despues de la cancelacion. Podes reactivar la cuenta en ese periodo.
+**¿Que pasa si cancelo mi suscripcion?**
+Al cancelar, la cuenta pasa al estado **DATA_RETENTION** y tus datos quedan accesibles en modo lectura durante un periodo de conservacion. Contacta a soporte para conocer los detalles de tu caso.
 
-**¿Puedo bajar de plan?**
-Si, podes pasar de PRO a BASIC o FREE en cualquier momento. El cambio aplica al proximo ciclo de facturacion.
+**¿Puedo cambiar de plan en cualquier momento?**
+Si. Podes upgradar tu plan de inmediato desde el panel de suscripcion. El cambio aplica al completar el pago.
 
-**¿El pago es automatico?**
-Si, el cobro es recurrente mensual via MercadoPago. Podes cancelarlo en cualquier momento.
+**¿Donde veo el historial de pagos?**
+En **Configuracion → Suscripcion** se muestra el historial de pagos procesados via MercadoPago con fecha, monto y estado de cada transaccion.
