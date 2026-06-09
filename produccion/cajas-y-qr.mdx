@@ -1,0 +1,70 @@
+---
+title: "Cajas y codigos QR"
+description: "Como registrar cajas de produccion y generar etiquetas QR."
+icon: "scan-barcode"
+---
+
+## Crear una caja
+
+Las cajas se crean dentro de un **lote abierto**.
+
+<Steps>
+  <Step title="Abre el lote correspondiente">
+    Ve a **Produccion → Lotes**, selecciona el lote `ABIERTO` y presiona "Nueva caja".
+  </Step>
+  <Step title="Completa los datos">
+    | Campo | Descripcion |
+    |-------|-------------|
+    | Tipo de pescado | Especie (hereda del lote) |
+    | Cantidad de unidades | Numero de piezas dentro de la caja |
+    | Peso (kg) | Peso neto de la caja |
+    | Nota (opcional) | Observaciones del operario |
+  </Step>
+  <Step title="El sistema asigna automaticamente">
+    - **Numero de serie** unico y autoincremental
+    - **Fecha de vencimiento** calculada segun la vida util configurada para la especie
+    - **Codigo QR** (UUID unico)
+    - **Lote de produccion** (codigo de semana/dia)
+  </Step>
+</Steps>
+
+## Codigos QR
+
+Cada caja tiene un **QR unico** que la identifica en toda la cadena.
+
+### Generar el QR
+
+Una vez creada la caja, podes:
+
+1. **Ver el QR** — se muestra en pantalla como imagen de alta resolucion
+2. **Imprimir** — imprime la etiqueta directamente desde la app
+3. **Registrar el escaneo** — cuando el QR fisico es escaneado en almacen o despacho
+
+### Que informacion tiene un QR
+
+Al escanear o consultar un QR, se muestra:
+- Empresa y lote
+- Especie, peso, unidades y fecha de vencimiento
+- Operario que creo la caja
+- Fecha de creacion
+- Captura vinculada (origen del pescado)
+
+### Limites por plan
+
+| Plan | QRs por mes |
+|------|-------------|
+| FREE | 500 (tope) |
+| BASIC | 5.000 (tope) |
+| PRO | Sin tope |
+
+<Warning>
+Al alcanzar el tope mensual de QRs, la generacion queda bloqueada. El contador se reinicia al renovar el periodo de facturacion o el 1 del mes (plan FREE). Ver [Planes](/empezando/planes).
+</Warning>
+
+## Editar una caja
+
+Podes modificar el peso, las unidades o agregar una nota a una caja existente. El QR no cambia.
+
+## Eliminar una caja
+
+Solo se puede eliminar una caja si el lote esta en estado `ABIERTO`. Una vez que el lote se cierra, las cajas son inmutables.
