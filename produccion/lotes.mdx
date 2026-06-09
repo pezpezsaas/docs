@@ -1,0 +1,60 @@
+---
+title: "Lotes (Palets)"
+description: "Como crear, gestionar y cerrar palets de produccion."
+icon: "package"
+---
+
+## Que es un lote
+
+Un **lote** (o palet) es la unidad de produccion en TrackFish. Agrupa todas las cajas producidas en una misma sesion de trabajo con el mismo tipo de pescado.
+
+## Crear un lote
+
+<Steps>
+  <Step title="Ve a Produccion > Lotes y presiona 'Nuevo lote'">
+  </Step>
+  <Step title="Completa los datos obligatorios">
+    - **Tipo de pescado** (especie configurada previamente)
+    - **Deposito** donde se almacenara el palet
+  </Step>
+  <Step title="Datos opcionales">
+    - **Captura vinculada** — para trazabilidad de origen
+    - **Target de cajas** y **target de kg** — metas de produccion
+    - **Lote de produccion** — codigo de semana/dia (se genera automaticamente)
+  </Step>
+  <Step title="El sistema genera el codigo automaticamente">
+    Formato: `{prefijo}-{YYYYMMDD}-{especie}-{nnn}`
+    Ejemplo: `palet-20260601-merluza-001`
+
+    El prefijo es personalizable en **Configuracion → Empresa**.
+  </Step>
+</Steps>
+
+## Estados del lote
+
+| Estado | Descripcion |
+|--------|-------------|
+| `ABIERTO` | En produccion activa — se pueden agregar cajas |
+| `CERRADO` | Produccion terminada — COGS calculados |
+| `EN_VIAJE` | Incluido en una carga activa |
+| `ENTREGADO` | Carga confirmada como recibida |
+| `EN_PAUSA` | Produccion pausada temporalmente |
+| `DESCARTADO` | Lote dado de baja |
+
+## Cerrar un lote
+
+Al terminar la produccion, **cerra el lote** para "congelar" los datos. Al cerrarse:
+
+- Se calcula el **COGS** (costo total del lote, costo unitario por caja y por kg vendible)
+- El lote pasa al estado `CERRADO`
+- No se pueden agregar mas cajas
+
+<Note>
+El calculo de COGS requiere tener una **captura** vinculada al lote con el costo de la materia prima. Si no hay captura, el COGS sera cero.
+</Note>
+
+## Vincular a una captura
+
+Cada lote puede vincularse a una **captura** para trazabilidad completa. Una captura puede tener multiples lotes (por ejemplo, si un mismo barco produjo palets de diferentes especies).
+
+Ver [Capturas](/produccion/capturas) para registrar el origen del pescado.
