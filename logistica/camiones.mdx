@@ -1,0 +1,29 @@
+---
+title: "Camiones"
+description: "Como gestionar la flota de camiones y conductores."
+icon: "truck"
+---
+
+## Crear un camion
+
+<Steps>
+  <Step title="Ve a Logistica > Camiones > Nuevo camion">
+  </Step>
+  <Step title="Completa los datos">
+    | Campo | Descripcion |
+    |-------|-------------|
+    | Patente | Identificador unico del vehiculo |
+    | Conductor | Nombre del conductor habitual |
+    | Telefono | Contacto del conductor (opcional) |
+  </Step>
+</Steps>
+
+La patente es unica por empresa. No podes tener dos camiones con la misma patente.
+
+## Activar / desactivar
+
+Los camiones pueden marcarse como **inactivos** cuando no estan en servicio (mantenimiento, temporada baja, etc.). Los camiones inactivos no aparecen en el selector al crear cargas.
+
+## Relacion con gastos
+
+Los gastos operativos (combustible, peajes, mantenimiento) pueden asociarse a un camion especifico. Ver [Gastos](/finanzas/gastos).
