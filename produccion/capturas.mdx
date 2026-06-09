@@ -1,0 +1,64 @@
+---
+title: "Capturas"
+description: "Como registrar el origen del pescado para trazabilidad completa."
+icon: "anchor"
+---
+
+## Para que sirve una captura
+
+La **captura** registra el origen de la materia prima que entra a tu planta. Es la base de la trazabilidad: vincula cada caja producida con el barco, el proveedor o la zona de pesca de donde provino.
+
+## Tipos de captura
+
+### Captura propia (`CAPTURA_PROPIA`)
+
+Para pesca propia con barco propio o arrendado.
+
+| Campo | Descripcion |
+|-------|-------------|
+| Embarcacion | Nombre del barco |
+| Matricula | Numero de matricula oficial |
+| Puerto | Puerto de desembarco |
+| Zona FAO | Zona de pesca segun nomenclatura FAO |
+| Arte de pesca | Red de arrastre, palangre, trampa, acuicultura, etc. |
+| Fecha de captura | Fecha en que se realizo la pesca |
+| Latitud / Longitud | Coordenadas GPS (opcional) |
+| SIFIPA | Numero de habilitacion SIFIPA/SENASA del barco |
+| Kg comprados | Kg brutos para calculo de merma y COGS |
+
+### Compra a proveedor (`COMPRA_PROVEEDOR`)
+
+Para compras de materia prima a terceros.
+
+| Campo | Descripcion |
+|-------|-------------|
+| Proveedor | Seleccion del maestro de proveedores |
+| Kg comprados | Kg brutos comprados |
+| Costo total | Importe total de la compra |
+| Moneda | ARS u otra |
+| Cotizacion | Tipo de cambio si aplica |
+| Numero de factura | Referencia documental |
+| Fecha de factura | Fecha del comprobante |
+
+## Crear una captura
+
+<Steps>
+  <Step title="Ve a Produccion > Capturas > Nueva captura">
+  </Step>
+  <Step title="Selecciona el tipo: Captura propia o Compra a proveedor">
+  </Step>
+  <Step title="Completa los campos segun el tipo">
+    Los campos obligatorios son la fecha y el tipo de origen.
+  </Step>
+  <Step title="Guarda">
+    La captura queda disponible para vincular a lotes.
+  </Step>
+</Steps>
+
+## Vincular a lotes
+
+Cuando creas un lote podes seleccionar la captura de origen. Una misma captura puede estar vinculada a multiples lotes.
+
+## Pagos a proveedor
+
+Si la captura es de tipo `COMPRA_PROVEEDOR`, podes registrar los pagos parciales al proveedor directamente desde el detalle de la captura. Ver [Proveedores](/finanzas/proveedores).
