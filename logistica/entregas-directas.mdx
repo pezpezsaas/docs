@@ -1,0 +1,47 @@
+---
+title: "Entregas directas"
+description: "Como registrar ventas y salidas de producto sin crear una carga formal."
+icon: "hand-helping"
+---
+
+## Para que sirve una entrega directa
+
+La **entrega directa** es una salida de producto simplificada, sin camion asignado. Es ideal para:
+
+- Ventas en **mostrador** (el cliente retira personalmente)
+- Entregas pequenas o informales que no justifican una carga
+- Transferencias internas de producto
+
+Al crear una entrega directa, el sistema genera automaticamente una **venta** con todos los datos de precio y COGS.
+
+## Crear una entrega directa
+
+<Steps>
+  <Step title="Ve a Logistica > Entregas directas > Nueva entrega">
+  </Step>
+  <Step title="Selecciona el lote de origen">
+    Elige de que deposito y lote sale el producto.
+  </Step>
+  <Step title="Define el cliente">
+    Selecciona el cliente. Para ventas en mostrador, usa el cliente tipo "Mostrador" (se crea uno automaticamente por empresa).
+  </Step>
+  <Step title="Completa la linea de producto">
+    - Tipo de pescado
+    - Cantidad de cajas y peso total
+    - Precio unitario y unidad (CAJA o KG)
+    - Tier aplicado
+  </Step>
+  <Step title="Confirma">
+    Se crea la entrega y automaticamente se genera la venta correspondiente.
+  </Step>
+</Steps>
+
+## Diferencias vs Carga
+
+| | Entrega directa | Carga |
+|---|---|---|
+| Camion | No requerido | Obligatorio |
+| Firma digital | No | Si |
+| URL de seguimiento | No | Si |
+| Multi-lote | No | Si |
+| Genera venta | Si (automatico) | Si (automatico) |
