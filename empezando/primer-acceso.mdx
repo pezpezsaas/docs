@@ -6,7 +6,7 @@ icon: "play"
 
 ## Instalacion
 
-TrackFish es una aplicacion de escritorio para **Windows**. Descarga el instalador desde [trackfish.io](https://www.trackfish.io/) y ejecutalo. No requiere configuracion de red.
+TrackFish es una aplicacion de escritorio para **Windows**. Descarga el instalador desde [trackfish.io](https://www.trackfish.io/) y ejecutalo. Requiere conexion a internet para conectarse al servidor.
 
 ## Configuracion inicial
 
@@ -18,7 +18,8 @@ TrackFish es una aplicacion de escritorio para **Windows**. Descarga el instalad
     Anda a **Configuracion → Empresa** y completa nombre, CUIT, email, telefono y direccion.
   </Step>
   <Step title="Crea tus especies">
-    Anda a **Configuracion → Especies** y agrega cada tipo de pescado que procesas con su vida util. Este paso es obligatorio antes de crear lotes.
+    Anda a **Produccion → Especies** y agrega cada tipo de pescado que procesas con su vida util.
+    Este paso es **obligatorio** antes de crear lotes — sin vida util configurada, el sistema no puede calcular fechas de vencimiento.
   </Step>
   <Step title="Crea tu primer deposito">
     Anda a **Logistica → Depositos** y crea al menos un deposito (ej: "Camara 1").
@@ -32,12 +33,12 @@ TrackFish es una aplicacion de escritorio para **Windows**. Descarga el instalad
 </Steps>
 
 <Tip>
-Una vez que tengas especie + deposito + camion configurados, ya podes crear tu primer lote completo.
+Una vez que tengas especie + deposito + camion configurados, ya podes crear tu primer lote completo de punta a punta.
 </Tip>
 
 ## Flujo de prueba recomendado
 
-1. Crear una captura de prueba (Produccion → Capturas)
+1. Crear una captura de prueba (**Produccion → Capturas**)
 2. Crear un lote vinculado a esa captura
 3. Agregar 3-5 cajas al lote
 4. Generar y ver el QR de una caja
