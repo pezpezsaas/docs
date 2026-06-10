@@ -42,7 +42,7 @@
       },
       {
         "group": "Configuracion", "icon": "settings",
-        "pages": ["configuracion/empresa","configuracion/notificaciones","configuracion/suscripcion"]
+        "pages": ["configuracion/empresa","configuracion/notificaciones","configuracion/suscripcion","configuracion/etiquetas"]
       }
     ]
   },
