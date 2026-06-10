@@ -1,0 +1,164 @@
+---
+title: "Etiquetas e impresoras"
+description: "Como configurar impresoras de etiquetas (Zebra, Brother, genericas) y disenar plantillas personalizadas para cajas, palets y remitos."
+icon: "printer"
+---
+
+## Que es el sistema de etiquetas
+
+TrackFish permite imprimir etiquetas directamente desde la aplicacion de escritorio, con soporte para tres tipos de impresoras:
+
+| Tipo | Modelos tipicos | Formato de impresion |
+|------|----------------|---------------------|
+| **Zebra** | ZDesigner, GK, GX, ZT | ZPL (directo a la impresora) |
+| **Brother** | QL-800, QL-1110, TD-4 | HTML via driver instalado |
+| **Generica** | Cualquier impresora | HTML via driver instalado |
+
+<Tip>
+La aplicacion detecta el tipo de impresora automaticamente segun el nombre que aparece en Windows. No hace falta configurar nada si el nombre contiene "zebra", "zdesigner", "brother" o "ql-".
+</Tip>
+
+---
+
+## Plantillas de etiquetas
+
+Una plantilla define el tamaño de la etiqueta y los campos que va a mostrar. Cada empresa puede tener sus propias plantillas guardadas.
+
+### Plantillas predefinidas
+
+Al ingresar a **Etiquetas** (menu lateral), vas a ver tres plantillas listas para usar:
+
+| Plantilla | Tamaño | DPI | Uso tipico |
+|-----------|--------|-----|-----------|
+| Caja — Zebra 203 dpi | 62 × 38 mm | 203 | Cajas de producto en Zebra GK/ZT |
+| Palet — Zebra 203 dpi | 101 × 76 mm | 203 | Palets con QR grande |
+| Brother QL — 300 dpi | 62 × 29 mm | 300 | Impresoras Brother QL-800/1110 |
+
+Hace clic en **Usar esta plantilla** para empezar a imprimir con una plantilla predefinida, o en **Crear a partir de esta** para personalizarla.
+
+### Crear o editar una plantilla
+
+1. Ir a **Etiquetas** en el menu lateral
+2. Clic en **Nueva plantilla** (o clic en una existente para editar)
+3. En el editor:
+   - **Panel izquierdo**: lista de campos en la etiqueta, botones para agregar nuevos campos
+   - **Centro**: canvas blanco con escala real, arrastra los campos para posicionarlos
+   - **Panel derecho**: propiedades del campo seleccionado (posicion, tamaño, contenido)
+
+---
+
+## Tipos de campos
+
+Cada campo que agregues a la etiqueta puede ser uno de estos tipos:
+
+| Tipo | Descripcion |
+|------|-------------|
+| **QR** | Codigo QR con la URL de trazabilidad del lote |
+| **Texto** | Texto fijo o con variables dinamicas |
+| **Linea horizontal** | Separador horizontal |
+| **Linea vertical** | Separador vertical |
+| **Rectangulo** | Borde rectangular para agrupar informacion |
+
+### Variables disponibles
+
+En los campos de texto podes usar variables entre llaves `{}` que se reemplazan con los datos reales al imprimir:
+
+| Variable | Dato que muestra |
+|----------|----------------|
+| `{especie}` | Nombre de la especie del lote |
+| `{lote}` | Codigo del lote (ej. `tf-20260601-merluza-001`) |
+| `{cajas}` | Cantidad de cajas del lote |
+| `{peso}` | Peso total en kg |
+| `{fecha}` | Fecha de produccion (DD/MM/YYYY) |
+| `{operario}` | Nombre del operario que registro el lote |
+| `{empresa}` | Nombre de la empresa |
+| `{id}` | ID interno del lote |
+
+**Ejemplo** — campo texto con contenido `{especie} | {peso} kg` va a mostrar `Merluza | 42.5 kg`.
+
+---
+
+## Propiedades de los campos
+
+Al seleccionar un campo en el canvas, el panel derecho muestra sus propiedades:
+
+| Propiedad | Descripcion |
+|-----------|-------------|
+| X / Y | Posicion en mm desde la esquina superior izquierda |
+| Ancho / Alto | Tamaño en mm |
+| Contenido | Texto o variable (solo campos texto) |
+| Fuente | Tamaño de fuente en puntos |
+| Negrita | Activar/desactivar negrita |
+
+<Tip>
+Tambien podes arrastrar los campos directamente sobre el canvas para posicionarlos visualmente.
+</Tip>
+
+---
+
+## Configurar Zebra via red (TCP/IP)
+
+Las impresoras Zebra conectadas a la red local se comunican por el protocolo ZPL directo al puerto `9100`. Para configurar la IP:
+
+1. Ir a **Configuracion** → seccion **Hardware**
+2. Completar el campo **IP de impresora Zebra** con la IP local de la impresora (ej. `192.168.1.50`)
+3. El puerto por defecto es `9100`, solo cambiarlo si tu impresora usa uno diferente
+4. Clic en **Guardar configuracion Zebra**
+
+<Info>
+Si la Zebra esta conectada por USB en lugar de red, no hace falta configurar IP. La aplicacion usa el driver de Windows para enviar ZPL directamente.
+</Info>
+
+---
+
+## Imprimir una etiqueta
+
+La impresion de etiquetas se dispara desde la pantalla de detalle de un lote:
+
+1. Abrir un lote desde **Produccion**
+2. Clic en el boton **Imprimir etiqueta**
+3. Seleccionar la plantilla a usar (por defecto se usa la marcada como predeterminada)
+4. Confirmar → la etiqueta se envia a la impresora configurada
+
+### Plantilla predeterminada
+
+Para marcar una plantilla como predeterminada:
+
+1. Ir a **Etiquetas**
+2. En la tarjeta de la plantilla, clic en el menu (tres puntos) → **Usar como predeterminada**
+
+Solo puede haber una plantilla predeterminada a la vez. La anterior deja de serlo automaticamente.
+
+---
+
+## Prueba de impresion
+
+Desde el editor de plantillas podes hacer una prueba antes de guardar:
+
+1. En el panel derecho del editor, seccion **Prueba de impresion**
+2. Seleccionar la impresora de destino
+3. Clic en **Imprimir prueba**
+
+La prueba usa datos de ejemplo para que puedas verificar el diseño sin necesitar un lote real.
+
+---
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="La impresora no aparece en la lista">
+    La lista se obtiene de Windows. Asegurate de que la impresora este instalada y aparezca en **Panel de control → Dispositivos e impresoras**. Si acabas de instalarla, reinicia la aplicacion.
+  </Accordion>
+
+  <Accordion title="La Zebra imprime caracteres extraños">
+    Verificar que el DPI configurado en la plantilla coincida con el DPI real de la impresora. Los modelos GK420d usan 203 dpi; los ZT410 pueden ser 203 o 300 dpi. El valor correcto suele estar en la etiqueta de configuracion de la impresora (imprimible con el boton de feed al encender).
+  </Accordion>
+
+  <Accordion title="El QR no escanea correctamente">
+    El QR contiene la URL de trazabilidad del lote. Si la URL no responde, verificar que el servidor este activo y que el lote exista. El tamaño minimo recomendado para el QR es 20 × 20 mm.
+  </Accordion>
+
+  <Accordion title="La etiqueta se imprime descentrada">
+    Ajustar los valores X e Y de los campos o el tamaño de la plantilla (ancho/alto en mm) para que coincidan con el tamaño fisico del rollo de etiquetas instalado en la impresora.
+  </Accordion>
+</AccordionGroup>
